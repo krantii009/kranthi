@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>call() method</title>
+	</head>
+	
+	<body style = "text-align:center;">
+		<h1 style = "color:green;" >Click Here</h1>
+
+		<button onClick="myFun()">click</button>
+		
+		<p id="k"></p>
+
+		<script>
+			function myFun() {
+			let p = {
+				fullName: function(addr1, addr2) {
+				return this.fName + " " + this.lName+ ", " + addr1 + ", " + addr2;
+				}
+			}
+				
+			let p1 = {
+				fName:"Kranthi",
+				lName: "Pendota",
+			}
+				
+			let x = p.fullName.call(p1, "HYD", "KNR");
+			document.getElementById("k").innerHTML = x;
+			}
+		</script>
+	</body>
+</html>
